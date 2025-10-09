@@ -16,15 +16,15 @@ public class BtgPactualBackendApplication {
 
 	@Bean
 	public NewTopic topic() {
-		return TopicBuilder.name("bpg-pactual-backend")
+		return TopicBuilder.name("orders")
 				.partitions(10)
 				.replicas(1)
 				.build();
 	}
 
-	@KafkaListener(id = "bpg-pactual-backend", topics="bpg-pactual-backend")
+	/*@KafkaListener(id = "orders", topics="orders")
 	public  void listen(String in) {
 		System.out.println(in);
-	}
+	}*/
 
 }
