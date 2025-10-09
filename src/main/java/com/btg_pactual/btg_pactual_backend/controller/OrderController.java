@@ -1,0 +1,23 @@
+package com.btg_pactual.btg_pactual_backend.controller;
+
+import com.btg_pactual.btg_pactual_backend.entity.OrderEntity;
+import com.btg_pactual.btg_pactual_backend.producer.KafkaProducer;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/orders")
+public class OrderController {
+
+    private final KafkaProducer producer;
+
+    public OrderController(KafkaProducer producer) {
+        this.producer = producer;
+    }
+
+    @PostMapping
+    public String sendMessage (@RequestBody OrderEntity order) {
+        producer.send("orders", String.valueOf(order));
+        return "Message sent.";
+    }
+
+}

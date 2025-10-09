@@ -22,9 +22,4 @@ public class BtgPactualBackendApplication {
 				.build();
 	}
 
-	/*@KafkaListener(id = "orders", topics="orders")
-	public  void listen(String in) {
-		System.out.println(in);
-	}*/
-
 }

@@ -1,5 +1,6 @@
 package com.btg_pactual.btg_pactual_backend.entity;
 
+import lombok.*;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -10,6 +11,9 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Document(collection = "orders")
+@ToString
+@Getter
+@Setter
 public class OrderEntity {
 
     @MongoId

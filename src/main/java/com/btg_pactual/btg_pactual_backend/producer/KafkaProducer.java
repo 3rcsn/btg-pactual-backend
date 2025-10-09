@@ -13,7 +13,7 @@ public class KafkaProducer {
 
     public void send(String topic, String message) {
         kafkaTemplate.send(topic, message);
-        System.out.println("Sent" + message);
+        System.out.println("Sent: " + message);
     }
 
 

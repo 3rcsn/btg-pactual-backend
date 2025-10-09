@@ -10,4 +10,5 @@ public class KafkaConsumer {
     public void consumeMessage (String message) {
         System.out.println("Received: " + message);
     }
+
 }
