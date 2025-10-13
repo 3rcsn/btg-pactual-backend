@@ -11,9 +11,9 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Document(collection = "orders")
-@ToString
 @Getter
 @Setter
+@NoArgsConstructor
 public class OrderEntity {
 
     @MongoId
