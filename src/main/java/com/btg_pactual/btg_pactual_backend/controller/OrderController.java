@@ -1,6 +1,6 @@
 package com.btg_pactual.btg_pactual_backend.controller;
 
-import com.btg_pactual.btg_pactual_backend.entity.OrderEntity;
+import com.btg_pactual.btg_pactual_backend.consumer.dto.OrderRecord;
 import com.btg_pactual.btg_pactual_backend.producer.KafkaProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +21,8 @@ public class OrderController {
     }
 
     @PostMapping
-    public ResponseEntity<?> sendMessage (@RequestBody OrderEntity order) {
-        producer.send("orders", String.valueOf(order));
+    public ResponseEntity<?> sendMessage (@RequestBody OrderRecord order) {
+        producer.send("orders", order);
         return ResponseEntity.ok("Message sent.");
     }
 
